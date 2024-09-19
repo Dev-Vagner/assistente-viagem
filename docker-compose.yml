@@ -1,0 +1,8 @@
+services:
+  api:
+    build: .
+    container_name: api
+    environment:
+      - CHAVE_OPENAI=${CHAVE_OPENAI}
+    ports:
+      - "8080:8080"

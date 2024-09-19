@@ -1,7 +1,7 @@
 package br.com.vbruno.travelassistant.controller;
 
 import br.com.vbruno.travelassistant.DTO.ErrorResponse;
-import br.com.vbruno.travelassistant.exception.RangeDateInvalidException;
+import br.com.vbruno.travelassistant.exception.DateInvalidException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +17,8 @@ import static org.springframework.http.HttpStatus.INTERNAL_SERVER_ERROR;
 @ControllerAdvice
 public class AdviceController {
 
-    @ExceptionHandler(RangeDateInvalidException.class)
-    public ResponseEntity<ErrorResponse> handleRangeDateInvalidException(RangeDateInvalidException ex, HttpServletRequest request) {
+    @ExceptionHandler(DateInvalidException.class)
+    public ResponseEntity<ErrorResponse> handleDateInvalidException(DateInvalidException ex, HttpServletRequest request) {
 
         HttpStatus status = BAD_REQUEST;
 

@@ -1,9 +1,6 @@
 package br.com.vbruno.travelassistant.controller;
 
-import br.com.vbruno.travelassistant.service.ArriveThePlaceService;
-import br.com.vbruno.travelassistant.service.HostingService;
-import br.com.vbruno.travelassistant.service.TouristAttractionsService;
-import br.com.vbruno.travelassistant.service.TouristToursService;
+import br.com.vbruno.travelassistant.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +25,12 @@ public class TravelAssistantController {
     @Autowired
     private TouristToursService touristToursService;
 
+    @Autowired
+    private WeatherForecastService weatherForecastService;
+
+    @Autowired
+    private ClothesTakeService clothesTakeService;
+
     @GetMapping("/arrive-place")
     public String arrivePlace(@RequestParam(name = "currentPlace") String currentPlace,
                               @RequestParam(name = "arrivalPlace") String arrivalPlace) {
@@ -47,5 +50,19 @@ public class TravelAssistantController {
     @GetMapping("/tourist-tours")
     public String touristTours(@RequestParam(name = "place") String place) {
         return touristToursService.tours(place);
+    }
+
+    @GetMapping("/weather-forecast")
+    public String weatherForecast(@RequestParam(name = "place") String place,
+                                  @RequestParam(name = "startDate") LocalDate startDate,
+                                  @RequestParam(name = "endDate") LocalDate endDate) {
+        return weatherForecastService.weather(place, startDate, endDate);
+    }
+
+    @GetMapping("/clothes-take")
+    public String clothesTake(@RequestParam(name = "place") String place,
+                              @RequestParam(name = "startDate") LocalDate startDate,
+                              @RequestParam(name = "endDate") LocalDate endDate) {
+        return clothesTakeService.clothes(place, startDate, endDate);
     }
 }
