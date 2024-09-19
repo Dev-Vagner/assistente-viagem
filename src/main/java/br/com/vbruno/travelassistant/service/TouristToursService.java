@@ -11,7 +11,7 @@ public class TouristToursService {
     private OpenAiChatModel chatClient;
 
     public String tours(String place) {
-        String question = "Liste as 3 principais empresas de passeios turísticos que trabalham na região do local " + place;
+        String question = "Liste as 3 principais empresas de passeios turísticos que trabalham na região de " + place;
 
         return chatClient.call(question);
     }

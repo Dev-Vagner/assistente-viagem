@@ -11,7 +11,7 @@ public class HostingService {
     private OpenAiChatModel chatClient;
 
     public String hosting(String place) {
-        String question = "Liste os 5 melhores locais para se hospedar, e os seus valores, no local " + place;
+        String question = "Liste os 5 melhores locais para se hospedar em " + place;
 
         return chatClient.call(question);
     }

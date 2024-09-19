@@ -19,7 +19,7 @@ public class ClothesTakeService {
     public String clothes(String place, LocalDate startDate, LocalDate endDate) {
         validateDateService.validate(startDate, endDate);
 
-        String question = "Quais roupas levar para utilizar no local " + place + " entre as datas de " +
+        String question = "Quais roupas levar para utilizar em " + place + " entre as datas de " +
                 startDate + " a " + endDate + " ?";
 
         return chatClient.call(question);

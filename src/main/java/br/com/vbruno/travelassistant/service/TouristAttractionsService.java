@@ -11,7 +11,7 @@ public class TouristAttractionsService {
     private OpenAiChatModel chatClient;
 
     public String attractions(String place) {
-        String question = "Liste os 5 principais pontos turísticos do local " + place;
+        String question = "Liste os 5 principais pontos turísticos de " + place;
 
         return chatClient.call(question);
     }

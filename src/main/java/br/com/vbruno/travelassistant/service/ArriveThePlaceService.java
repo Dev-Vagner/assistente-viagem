@@ -11,7 +11,7 @@ public class ArriveThePlaceService {
     private OpenAiChatModel chatClient;
 
     public String arrive(String currentPlace, String arrivalPlace) {
-        String question = "Qual a distância, em KM, do local " + currentPlace + " até o local " + arrivalPlace +
+        String question = "Qual a distância, em KM, de " + currentPlace + " até " + arrivalPlace +
                 " e qual a forma mais indicada, e os seus custos, de chegar até lá?";
 
         return chatClient.call(question);
