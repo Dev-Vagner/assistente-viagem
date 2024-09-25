@@ -15,9 +15,8 @@ Então, buscando auxiliar nestas e em mais algumas questões que esta API foi de
 ## Ferramentas utilizadas
 - **Java 17 / Spring Boot**: Para o desenvolvimento da API Rest;
 - **Spring AI**: Para conexão com a API da OpenAI;
-- **Docker**: Para containerização e gerenciamento de ambientes;
+- **Docker / Docker Compose**: Para containerização e gerenciamento de ambientes;
 - **Swagger**: Para a documentação da API;
-- **Azure**: Para a realização do deploy da API;
 
 ## Funcionalidades
 - `GET /travel-assistant/arrive-place`: Mostra informações de como chegar ao destino;
@@ -38,7 +37,7 @@ Então, buscando auxiliar nestas e em mais algumas questões que esta API foi de
         ```bash
         cd assistente-viagem
         ```
-    3. Insira a variável de ambiente do arquivo .env:
+    3. Insira a variável de ambiente do arquivo .env
     4. No diretório raiz do projeto, execute o comando:
     ```bash
       docker-compose up -d
@@ -46,9 +45,6 @@ Então, buscando auxiliar nestas e em mais algumas questões que esta API foi de
     5. Acesse os dados da aplicação:
         - Acesse a API em: `http://localhost:8080`
         - Acesse a documentação Swagger da API em: `http://localhost:8080/docs`
-
-## Documentação
-Caso não queira executar a API na sua máquina local, também é possível acessar a documentação Swagger desta API no link:
 
 ---
 
